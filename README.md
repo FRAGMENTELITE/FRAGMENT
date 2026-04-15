@@ -19,6 +19,5 @@ La version "Lite" présente ici est un outil brut. Pour une gestion sécurisée 
 * **🛠️ Support & Mises à jour :** Accès prioritaire aux nouvelles fonctionnalités.
 
 ### 🚀 Tester la Démo
-[Cliquez ici pour tester l'outil en direct]
-
- https://fragmentarmor.gumroad.com/l/kzbxcv
+VOIR LE LIEN CI DESSOUS
+https://fragmentarmor.gumroad.com/l/kzbxcv
