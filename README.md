@@ -18,6 +18,8 @@ La version "Lite" présente ici est un outil brut. Pour une gestion sécurisée 
 * **🖨️ Mode Impression Pro :** Génération automatique de feuilles de sauvegarde avec QR Codes haute définition.
 * **🛠️ Support & Mises à jour :** Accès prioritaire aux nouvelles fonctionnalités.
 
+* "Designed for maximum sovereignty. No cloud, no tracking, just math."
+
 ### 🚀 Tester la Démo
 CLICK SUR LE LIEN
 https://fragmentarmor.gumroad.com/l/kzbxcv
