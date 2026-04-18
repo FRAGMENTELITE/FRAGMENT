@@ -22,4 +22,4 @@ La version "Lite" présente ici est un outil brut. Pour une gestion sécurisée 
 
 ### 🚀 Tester la Démo
 CLICK SUR LE LIEN
-https://fragmentarmor.gumroad.com/l/kzbxcv
+logiciel-securite-xor
