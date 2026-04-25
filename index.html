@@ -9,7 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════
-   FRAGMENT — SITE WEB COMPLET (VERSION GUMROAD)
+   FRAGMENT — SITE WEB COMPLET
+   Police : Syne (display) + DM Mono (technique)
+   Thème  : Bleu nuit profond + Cyan LED + Orange cuivré
+   Style  : Industriel souverain / tech militaire épuré
 ═══════════════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -34,9 +37,10 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:var(--mono);font-size:15px;line-height:1.6;overflow-x:hidden}
 
+/* Grid background */
 body::before{
   content:'';position:fixed;inset:0;
-  background-image:
+  background-image: 
     linear-gradient(rgba(0,212,255,.025) 1px,transparent 1px),
     linear-gradient(90deg,rgba(0,212,255,.025) 1px,transparent 1px);
   background-size:60px 60px;
@@ -47,6 +51,7 @@ body::before{
 .container-sm{max-width:780px;margin:0 auto;padding:0 24px}
 section{position:relative;z-index:1}
 
+/* ── Typography & UI ─────────────────────────────────── */
 .tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.6rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:2px;border:1px solid var(--border2);color:var(--c1);background:rgba(0,212,255,.05)}
 .tag-dot{width:5px;height:5px;border-radius:50%;background:var(--c1);animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
@@ -56,6 +61,7 @@ h2.section-title{font-family:var(--syne);font-size:clamp(1.8rem,4vw,2.8rem);font
 h2.section-title span{color:var(--c1)}
 .section-desc{font-size:.88rem;color:var(--muted);line-height:1.8;max-width:560px}
 
+/* ── Navigation ──────────────────────────────────────── */
 nav{position:sticky;top:0;z-index:100;background:rgba(3,6,13,.88);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto}
 .nav-logo{font-family:var(--syne);font-size:1.1rem;font-weight:800;letter-spacing:4px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}
@@ -66,24 +72,33 @@ nav{position:sticky;top:0;z-index:100;background:rgba(3,6,13,.88);border-bottom:
 .nav-cta{font-family:var(--syne);font-size:.65rem;font-weight:700;letter-spacing:1px;padding:8px 20px;border:1px solid var(--c1);color:var(--c1);text-decoration:none;border-radius:2px;transition:all .2s}
 .nav-cta:hover{background:var(--c1);color:#000}
 
+/* ── Hero ────────────────────────────────────────────── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px;position:relative;overflow:hidden}
 .hero-title{font-family:var(--syne);font-size:clamp(2.8rem,8vw,6.5rem);font-weight:800;line-height:.95;letter-spacing:-2px;color:#fff;margin-bottom:28px}
 .hero-title .line2{color:var(--c1);display:block}
 .hero-sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:540px;margin-bottom:40px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:16px}
 
 .btn-primary{font-family:var(--syne);font-size:.78rem;font-weight:700;letter-spacing:1px;padding:14px 32px;background:var(--c1);color:#000;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border-radius:2px}
 .btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,212,255,.3)}
 .btn-secondary{font-family:var(--syne);font-size:.78rem;font-weight:700;letter-spacing:1px;padding:14px 32px;background:transparent;color:var(--txt);border:1px solid var(--border2);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border-radius:2px}
+.btn-secondary:hover{background:rgba(255,255,255,.03);border-color:var(--muted)}
 
+/* ── How It Works ────────────────────────────────────── */
+.how{padding:100px 0;background:var(--bg)}
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:60px}
-.how-step{background:var(--card);padding:36px 28px;position:relative}
+.how-step{background:var(--card);padding:36px 28px;position:relative;transition:background .3s}
+.how-step:hover{background:var(--card2)}
 .step-num{font-family:var(--syne);font-size:3.5rem;font-weight:800;color:rgba(0,212,255,.1);line-height:1;margin-bottom:16px}
 .step-title{font-family:var(--syne);font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px}
 .step-desc{font-size:.78rem;color:var(--muted);line-height:1.7}
 
+/* ── Versions ────────────────────────────────────────── */
 .versions{padding:100px 0;background:var(--bg2)}
 .versions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
 .version-card{background:var(--card);border:1px solid var(--border);padding:32px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.version-card:hover{transform:translateY(-4px);border-color:var(--border2)}
+.vc-tag{position:absolute;top:0;right:0;padding:6px 12px;font-size:.55rem;font-weight:700;letter-spacing:1px;background:var(--faint);color:var(--c1);border-left:1px solid var(--border);border-bottom:1px solid var(--border)}
 .vc-name{font-family:var(--syne);font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:8px}
 .vc-desc{font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:24px}
 .vc-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
@@ -92,14 +107,127 @@ nav{position:sticky;top:0;z-index:100;background:rgba(3,6,13,.88);border-bottom:
 
 .vc-action{width:100%;padding:12px;font-family:var(--syne);font-size:.7rem;font-weight:700;letter-spacing:1px;cursor:pointer;border-radius:2px;text-align:center;text-decoration:none;display:block;transition:all .2s}
 .va-lite{background:transparent;color:var(--c1);border:1px solid var(--c1)}
+.va-lite:hover{background:rgba(0,212,255,.05)}
 .va-elite{background:var(--c1);color:#000;border:1px solid var(--c1)}
+.va-elite:hover{filter:brightness(1.1)}
 .va-corp{background:transparent;color:var(--c2);border:1px solid var(--c2)}
+.va-corp:hover{background:rgba(255,140,66,.05)}
 
+/* ── Security / Compliance ───────────────────────────── */
 .security{padding:100px 0}
 .security-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:60px}
 .sec-visual{background:var(--card);border:1px solid var(--border);padding:32px;font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:2}
+.sec-visual span{color:var(--c1)}
+.sec-visual b{color:var(--c2);font-weight:400}
+.sec-list{list-style:none;margin-top:32px;display:flex;flex-direction:column;gap:20px}
+.sec-item{display:flex;gap:16px}
+.sec-icon{flex-shrink:0;width:36px;height:36px;background:var(--faint);border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--c1)}
+.sec-txt h4{font-size:.85rem;color:#fff;margin-bottom:4px}
+.sec-txt p{font-size:.75rem;color:var(--muted)}
 
-.faq{padding:100px 0}
-.faq-list{margin-top:60px;display:flex;flex-direction:column;gap:2px}
-.faq-item{background:var(--card);border:1px solid var(--border)}
-.faq-q{padding:22px 24px;cursor:pointer;display:flex;justify-content:space-
+/* ── FAQ ─────────────────────────────────────────────── */
+.faq{padding:100px 0;background:var(--bg)}
+.faq-list{margin-top:60px;display:flex;flex-direction:column;gap:2px;background:var(--border);border:1px solid var(--border)}
+.faq-item{background:var(--card);transition:background .2s}
+.faq-q{padding:22px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--syne);font-size:.9rem;font-weight:600;color:#fff}
+.faq-icon{font-size:1.2rem;color:var(--muted);transition:transform .3s}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(0.4,0,0.2,1);background:rgba(0,212,255,.01)}
+.faq-a-inner{padding:0 24px 22px;font-size:.8rem;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--c1)}
+.faq-item.open .faq-a{max-height:400px}
+
+/* ── Footer ──────────────────────────────────────────── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:80px 0 40px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:60px}
+.footer-logo{font-family:var(--syne);font-size:1.2rem;font-weight:800;letter-spacing:4px;color:#fff;margin-bottom:20px;display:block;text-decoration:none}
+.footer-desc{font-size:.75rem;color:var(--muted);max-width:300px}
+.footer-head{font-family:var(--mono);font-size:.65rem;font-weight:700;color:var(--c1);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-links a{font-size:.75rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{border-top:1px solid var(--border);padding-top:40px;display:flex;justify-content:space-between;align-items:center;font-size:.65rem;color:var(--muted);font-family:var(--mono)}
+
+/* ── Reveal Animation ────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(24px);transition:all .8s cubic-bezier(0.2,0.8,0.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media (max-width:860px){
+  .nav-links{display:none}
+  .hero-title{font-size:3.5rem}
+  .versions-grid, .how-grid, .security-grid, .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span class="nav-logo-dot"></span>FRAGMENT</a>
+    <div class="nav-links">
+      <a href="#comment">Protocole</a>
+      <a href="#versions">Éditions</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#versions" class="nav-cta">ACCÉDER →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow reveal"><span class="tag"><span class="tag-dot"></span>Chiffrement local · Zéro serveur</span></div>
+    <h1 class="hero-title reveal">PROTÉGEZ<br><span class="line2">VOS SECRETS<span class="flag" style="font-size:3rem;margin-left:15px;vertical-align:middle">🇫🇷</span></span></h1>
+    <p class="hero-sub reveal">L'application souveraine de fragmentation cryptographique XOR. Divisez mathématiquement vos informations sensibles en deux fragments physiques et numériques indépendants.</p>
+    <div class="hero-btns reveal">
+      <a href="#versions" class="btn-primary">UTILISER FRAGMENT</a>
+      <a href="#comment" class="btn-secondary">DÉCOUVRIR LE PROTOCOLE</a>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="comment">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Protocole technique</div>
+      <h2 class="section-title">Comment ça <span>fonctionne</span></h2>
+      <p class="section-desc">FRAGMENT n'est pas un coffre-fort classique. C'est un outil de dissociation mathématique.</p>
+    </div>
+    <div class="how-grid reveal">
+      <div class="how-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Saisie Locale</div>
+        <p class="step-desc">Saisissez votre secret (clé privée, mot de passe). Le traitement se fait à 100% dans la mémoire vive de votre machine.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Fragmentation XOR</div>
+        <p class="step-desc">L'algorithme génère un masque aléatoire unique pour produire deux fragments. Aucun ne contient l'information complète.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Dissociation Physique</div>
+        <p class="step-desc">Stockez le fragment A sur un support numérique et imprimez le fragment B. Le secret n'existe plus nulle part au complet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="versions" id="versions">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Éditions disponibles</div>
+      <h2 class="section-title">Choisissez votre <span>version</span></h2>
+    </div>
+    <div class="versions-grid reveal">
+      <div class="version-card">
+        <div class="vc-tag">GRATUIT</div>
+        <div class="vc-name">LITE</div>
+        <p class="vc-desc">L'outil essentiel pour fragmenter vos secrets textuels instantanément.</p>
+        <ul class="vc-features">
+          <li>Fragmentation XOR standard</li>
+          <li>Recomposition instantanée</li>
+          <li>Mode sombre / clair</li>
+          <li>Zéro collecte de données</li>
+        </ul>
+        <button class="vc-action va-lite" onclick="ouvrirApp('lite')">LANCER LITE →</button>
+      </div>
