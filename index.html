@@ -9,10 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════
-   FRAGMENT — SITE WEB COMPLET
-   Police : Syne (display) + DM Mono (technique)
-   Thème  : Bleu nuit profond + Cyan LED + Orange cuivré
-   Style  : Industriel souverain / tech militaire épuré
+   FRAGMENT — SITE WEB COMPLET (VERSION EXTERNE)
 ═══════════════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -37,7 +34,6 @@
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--txt);font-family:var(--mono);font-size:15px;line-height:1.6;overflow-x:hidden}
 
-/* Grille de fond globale */
 body::before{
   content:'';position:fixed;inset:0;
   background-image:
@@ -47,7 +43,6 @@ body::before{
   pointer-events:none;z-index:0
 }
 
-/* ── UTILITIES ── */
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
 .container-sm{max-width:780px;margin:0 auto;padding:0 24px}
 section{position:relative;z-index:1}
@@ -61,7 +56,6 @@ h2.section-title{font-family:var(--syne);font-size:clamp(1.8rem,4vw,2.8rem);font
 h2.section-title span{color:var(--c1)}
 .section-desc{font-size:.88rem;color:var(--muted);line-height:1.8;max-width:560px}
 
-/* ── NAV ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(3,6,13,.88);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1120px;margin:0 auto}
 .nav-logo{font-family:var(--syne);font-size:1.1rem;font-weight:800;letter-spacing:4px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}
@@ -71,815 +65,61 @@ nav{position:sticky;top:0;z-index:100;background:rgba(3,6,13,.88);border-bottom:
 .nav-links a:hover{color:var(--c1)}
 .nav-cta{font-family:var(--syne);font-size:.65rem;font-weight:700;letter-spacing:1px;padding:8px 20px;border:1px solid var(--c1);color:var(--c1);text-decoration:none;border-radius:2px;transition:all .2s}
 .nav-cta:hover{background:var(--c1);color:#000}
-@media(max-width:680px){.nav-links{display:none}}
 
-/* ── HERO ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(0,212,255,.08) 0%,transparent 65%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-10%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,140,66,.05) 0%,transparent 65%);pointer-events:none}
-
-.hero-eyebrow{margin-bottom:24px}
 .hero-title{font-family:var(--syne);font-size:clamp(2.8rem,8vw,6.5rem);font-weight:800;line-height:.95;letter-spacing:-2px;color:#fff;margin-bottom:28px}
 .hero-title .line2{color:var(--c1);display:block}
-.hero-title .flag{font-size:.6em;vertical-align:middle;margin-left:8px}
 .hero-sub{font-size:1rem;color:var(--muted);line-height:1.8;max-width:540px;margin-bottom:40px}
-.hero-sub strong{color:var(--txt)}
 
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:60px}
 .btn-primary{font-family:var(--syne);font-size:.78rem;font-weight:700;letter-spacing:1px;padding:14px 32px;background:var(--c1);color:#000;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border-radius:2px}
 .btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,212,255,.3)}
-.btn-secondary{font-family:var(--syne);font-size:.78rem;font-weight:700;letter-spacing:1px;padding:14px 32px;background:transparent;color:var(--txt);border:1px solid var(--border2);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;border-radius:2px}
-.btn-secondary:hover{border-color:var(--c1);color:var(--c1)}
 
-.hero-stats{display:flex;gap:40px;flex-wrap:wrap}
-.stat{display:flex;flex-direction:column;gap:4px}
-.stat-num{font-family:var(--syne);font-size:1.8rem;font-weight:800;color:#fff}
-.stat-lbl{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-
-/* Barre d'état hero */
-.hero-status{display:flex;align-items:center;gap:10px;padding:10px 18px;background:rgba(0,212,255,.05);border:1px solid var(--border);border-radius:2px;font-size:.62rem;letter-spacing:1.5px;color:var(--muted);width:fit-content;margin-bottom:40px}
-.status-led{width:6px;height:6px;border-radius:50%;background:var(--c3);box-shadow:0 0 8px var(--c3);animation:blink 2.5s infinite}
-
-/* ── DIVIDER ── */
-.divider{border:none;border-top:1px solid var(--border);margin:0}
-
-/* ── COMMENT ÇA MARCHE ── */
-.how{padding:100px 0}
-.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:60px}
-.how-step{background:var(--card);padding:36px 28px;position:relative}
-.how-step:hover{background:var(--card2)}
-.step-num{font-family:var(--syne);font-size:3.5rem;font-weight:800;color:rgba(0,212,255,.1);line-height:1;margin-bottom:16px}
-.step-title{font-family:var(--syne);font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px}
-.step-desc{font-size:.78rem;color:var(--muted);line-height:1.7}
-.step-tag{position:absolute;top:16px;right:16px}
-@media(max-width:720px){.how-grid{grid-template-columns:1fr}}
-
-/* ── VERSIONS ── */
 .versions{padding:100px 0;background:var(--bg2)}
 .versions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
-@media(max-width:860px){.versions-grid{grid-template-columns:1fr}}
-
 .version-card{background:var(--card);border:1px solid var(--border);padding:32px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
 .version-card:hover{transform:translateY(-4px);border-color:var(--border2)}
-.version-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
-.vc-lite::before{background:var(--c1)}
-.vc-elite::before{background:linear-gradient(90deg,var(--c1),var(--c2))}
-.vc-corp::before{background:var(--c2)}
-.vc-featured{border-color:rgba(0,212,255,.3);box-shadow:0 0 30px rgba(0,212,255,.08)}
-
-.vc-badge{font-size:.52rem;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:20px;display:inline-block;font-family:var(--mono);font-weight:500}
-.badge-lite{background:rgba(0,212,255,.1);color:var(--c1);border:1px solid rgba(0,212,255,.2)}
-.badge-elite{background:linear-gradient(90deg,rgba(0,212,255,.12),rgba(255,140,66,.12));color:#fff;border:1px solid rgba(255,255,255,.1)}
-.badge-corp{background:rgba(255,140,66,.1);color:var(--c2);border:1px solid rgba(255,140,66,.2)}
-
 .vc-name{font-family:var(--syne);font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:8px}
 .vc-desc{font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:24px}
-
-.vc-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
-.vc-features li{font-size:.74rem;color:var(--muted);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
-.vc-features li::before{content:'✓';color:var(--c3);font-weight:700;flex-shrink:0;margin-top:2px}
-.vc-features li.na{color:var(--faint)}
-.vc-features li.na::before{content:'—';color:var(--faint)}
-
 .vc-action{width:100%;padding:12px;font-family:var(--syne);font-size:.7rem;font-weight:700;letter-spacing:1px;cursor:pointer;border-radius:2px;text-align:center;text-decoration:none;display:block;transition:all .2s}
 .va-lite{background:transparent;color:var(--c1);border:1px solid var(--c1)}
-.va-lite:hover{background:rgba(0,212,255,.1)}
 .va-elite{background:var(--c1);color:#000;border:1px solid var(--c1)}
-.va-elite:hover{filter:brightness(1.1)}
 .va-corp{background:transparent;color:var(--c2);border:1px solid var(--c2)}
-.va-corp:hover{background:rgba(255,140,66,.1)}
 
-/* ── SÉCURITÉ ── */
-.security{padding:100px 0}
-.security-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:60px}
-@media(max-width:720px){.security-grid{grid-template-columns:1fr}}
-
-.sec-visual{background:var(--card);border:1px solid var(--border);padding:32px;font-family:var(--mono);font-size:.72rem;color:var(--muted);line-height:2}
-.sec-visual .comment{color:rgba(0,212,255,.4)}
-.sec-visual .key{color:var(--c1)}
-.sec-visual .val{color:var(--c3)}
-.sec-visual .op{color:var(--c2)}
-.code-line{display:flex;gap:16px;padding:4px 0;border-bottom:1px solid var(--faint)}
-.code-num{color:var(--faint);user-select:none;min-width:24px;text-align:right}
-
-.sec-points{display:flex;flex-direction:column;gap:20px}
-.sec-point{display:flex;gap:16px;align-items:flex-start}
-.sec-point-ico{width:36px;height:36px;border-radius:2px;background:rgba(0,212,255,.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
-.sec-point-body{flex:1}
-.sec-point-title{font-family:var(--syne);font-size:.9rem;font-weight:700;color:#fff;margin-bottom:4px}
-.sec-point-desc{font-size:.74rem;color:var(--muted);line-height:1.6}
-
-/* ── ALGO VISUEL ── */
-.algo{padding:100px 0;background:var(--bg3)}
-.algo-diagram{display:flex;align-items:center;gap:0;margin-top:60px;overflow-x:auto;padding-bottom:16px}
-.algo-box{background:var(--card);border:1px solid var(--border);padding:20px 18px;min-width:140px;flex-shrink:0;text-align:center}
-.algo-box-title{font-size:.52rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.algo-box-val{font-family:var(--syne);font-size:1.1rem;font-weight:800;color:#fff}
-.algo-box-sub{font-size:.5rem;color:var(--muted);margin-top:5px}
-.algo-arrow{padding:0 12px;color:var(--c1);font-size:1.2rem;flex-shrink:0}
-.algo-op{background:rgba(0,212,255,.08);border:1px solid var(--border2);padding:16px 14px;min-width:90px;flex-shrink:0;text-align:center;border-radius:2px}
-.algo-op-sym{font-family:var(--syne);font-size:1.5rem;font-weight:800;color:var(--c1)}
-.algo-op-lbl{font-size:.46rem;letter-spacing:1px;color:var(--muted);margin-top:3px}
-.algo-result{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
-.algo-frag{background:var(--card);border:1px solid var(--border);padding:14px 16px;min-width:130px;border-radius:2px}
-.algo-frag-a{border-left:3px solid var(--c1)}
-.algo-frag-b{border-left:3px solid var(--c2)}
-.algo-frag-lbl{font-size:.5rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.algo-frag-val{font-family:var(--mono);font-size:.65rem;color:var(--txt);word-break:break-all}
-
-/* ── FAQ ── */
-.faq{padding:100px 0}
-.faq-list{margin-top:60px;display:flex;flex-direction:column;gap:2px}
-.faq-item{background:var(--card);border:1px solid var(--border);overflow:hidden}
-.faq-q{padding:22px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:background .2s}
-.faq-q:hover{background:var(--card2)}
-.faq-q-txt{font-family:var(--syne);font-size:.9rem;font-weight:600;color:#fff}
-.faq-icon{color:var(--c1);font-size:1.1rem;flex-shrink:0;transition:transform .25s;font-family:var(--mono)}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-item.open .faq-a{max-height:400px}
-.faq-a-inner{padding:0 24px 22px;font-size:.8rem;color:var(--muted);line-height:1.8}
-.faq-a-inner strong{color:var(--txt)}
-.faq-a-inner a{color:var(--c1);text-decoration:underline}
-.faq-a-inner code{font-family:var(--mono);background:var(--faint);padding:2px 6px;border-radius:2px;font-size:.75rem;color:var(--c1)}
-
-/* ── CONFORMITÉ / LEGAL ── */
-.legal{padding:100px 0;background:var(--bg2)}
-.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:60px}
-@media(max-width:680px){.legal-grid{grid-template-columns:1fr}}
-.legal-card{background:var(--card);border:1px solid var(--border);padding:28px}
-.legal-card-ico{font-size:1.6rem;margin-bottom:14px}
-.legal-card-title{font-family:var(--syne);font-size:1rem;font-weight:700;color:#fff;margin-bottom:10px}
-.legal-card-body{font-size:.76rem;color:var(--muted);line-height:1.8}
-.legal-card-body strong{color:var(--txt)}
-.legal-card-body ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:5px}
-.legal-card-body li::before{content:'→ ';color:var(--c1)}
-.legal-card-body a{color:var(--c1)}
-
-/* ── CTA FINAL ── */
-.cta-section{padding:120px 0;text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(0,212,255,.05) 0%,transparent 70%)}
-.cta-title{font-family:var(--syne);font-size:clamp(2rem,5vw,4rem);font-weight:800;color:#fff;line-height:1;margin-bottom:20px}
-.cta-desc{font-size:.88rem;color:var(--muted);margin-bottom:40px;line-height:1.8}
-.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-
-/* ── FOOTER ── */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:48px 0 32px}
-.footer-inner{max-width:1120px;margin:0 auto;padding:0 24px}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
-@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
-.footer-brand{font-family:var(--syne);font-size:1.2rem;font-weight:800;letter-spacing:4px;color:#fff;margin-bottom:12px}
-.footer-tagline{font-size:.7rem;color:var(--muted);line-height:1.7;max-width:260px}
-.footer-col-title{font-family:var(--syne);font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-links a{font-size:.74rem;color:var(--muted);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--c1)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:12px;font-size:.65rem;color:var(--muted)}
-.footer-copy span{color:var(--c1)}
-.footer-legal{display:flex;gap:20px}
-.footer-legal a{color:var(--muted);text-decoration:none;transition:color .2s}
-.footer-legal a:hover{color:var(--c1)}
-
-/* ── MODALE APPS ── */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
 .modal-overlay.open{display:flex}
-.modal-box{background:var(--card);border:1px solid var(--border2);max-width:680px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
-.modal-header{padding:24px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.modal-title{font-family:var(--syne);font-size:1.1rem;font-weight:700;color:#fff}
-.modal-close{background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;padding:4px;line-height:1;transition:color .2s}
-.modal-close:hover{color:#fff}
-.modal-body{padding:28px}
+.modal-box{background:var(--card);border:1px solid var(--border2);max-width:900px;width:100%;height:85vh;position:relative}
+.modal-header{padding:15px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-family:var(--syne);font-size:1rem;font-weight:700;color:#fff}
+.modal-close{background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer}
+.app-frame{width:100%;height:calc(100% - 55px);border:none;background:var(--bg)}
 
-/* Onglets dans la modale */
-.app-tabs{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);padding:4px;border-radius:2px;margin-bottom:20px}
-.app-tab{flex:1;padding:9px 0;text-align:center;font-size:.62rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:1px;color:var(--muted);transition:all .2s;font-family:var(--mono)}
-.app-tab.active{background:var(--c1);color:#000}
-
-.app-panel{display:none}
-.app-panel.active{display:block}
-
-/* ── IFRAME WRAPPER ── */
-.app-frame{width:100%;min-height:600px;border:none;display:block;background:var(--bg)}
-
-/* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ── COOKIE BANNER ── */
-.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--border);padding:16px 24px;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.72rem;color:var(--muted)}
-.cookie-banner.hidden{display:none}
-.cookie-btns{display:flex;gap:10px;flex-shrink:0}
-.cookie-accept{padding:7px 18px;background:var(--c1);color:#000;border:none;cursor:pointer;font-family:var(--syne);font-size:.65rem;font-weight:700;letter-spacing:.5px;border-radius:2px}
-.cookie-decline{padding:7px 14px;background:transparent;color:var(--muted);border:1px solid var(--border);cursor:pointer;font-size:.65rem;border-radius:2px}
+@media(max-width:860px){.versions-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- ── NAVIGATION ── -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-dot"></span>
-      FRAGMENT
-    </a>
-    <div class="nav-links">
-      <a href="#comment">Fonctionnement</a>
-      <a href="#versions">Versions</a>
-      <a href="#securite">Sécurité</a>
-      <a href="#faq">FAQ</a>
-      <a href="#legal">Conformité</a>
-    </div>
+    <a href="#" class="nav-logo"><span class="nav-logo-dot"></span>FRAGMENT</a>
     <a href="#versions" class="nav-cta">ACCÉDER →</a>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="container">
-    <div class="hero-eyebrow">
-      <span class="tag"><span class="tag-dot"></span>Chiffrement local · Zéro serveur</span>
-    </div>
-    <h1 class="hero-title">
-      PROTÉGEZ<br>
-      <span class="line2">VOS SECRETS<span class="flag">🇫🇷</span></span>
-    </h1>
-    <p class="hero-sub">
-      FRAGMENT divise mathématiquement votre secret en <strong>deux fragments indépendants</strong>.
-      Ni l'un ni l'autre ne révèle quoi que ce soit seul.
-      Algorithme XOR crypto-sécurisé, 100% local.
-    </p>
-    <div class="hero-status">
-      <span class="status-led"></span>
-      SYSTÈME EN LIGNE — AUCUNE DONNÉE NE QUITTE VOTRE APPAREIL
-    </div>
+    <div class="hero-eyebrow"><span class="tag"><span class="tag-dot"></span>Chiffrement local · Zéro serveur</span></div>
+    <h1 class="hero-title">PROTÉGEZ<br><span class="line2">VOS SECRETS<span class="flag">🇫🇷</span></span></h1>
+    <p class="hero-sub">L'application de fragmentation cryptographique XOR. Désormais accessible via vos liens externes sécurisés.</p>
     <div class="hero-btns">
-      <a href="#versions" class="btn-primary">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        UTILISER FRAGMENT
-      </a>
-      <a href="#comment" class="btn-secondary">COMMENT ÇA MARCHE</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">256</span><span class="stat-lbl">Bits d'entropie</span></div>
-      <div class="stat"><span class="stat-num">0</span><span class="stat-lbl">Données envoyées</span></div>
-      <div class="stat"><span class="stat-num">3</span><span class="stat-lbl">Éditions disponibles</span></div>
+      <a href="#versions" class="btn-primary">UTILISER FRAGMENT</a>
     </div>
   </div>
 </section>
 
-<hr class="divider">
-
-<!-- ── COMMENT ÇA MARCHE ── -->
-<section class="how" id="comment">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Protocole</div>
-      <h2 class="section-title">Comment ça <span>fonctionne</span></h2>
-      <p class="section-desc">FRAGMENT applique un chiffrement XOR one-time pad avec un masque aléatoire crypto-sécurisé. Le résultat : deux fragments mathématiquement liés mais individuellement inutiles.</p>
-    </div>
-    <div class="how-grid reveal">
-      <div class="how-step">
-        <div class="step-num">01</div>
-        <div class="step-tag"><span class="tag">Entrée</span></div>
-        <div class="step-title">Saisissez votre secret</div>
-        <p class="step-desc">Mot de passe, phrase de récupération, clé API, seed phrase, code PIN — tout texte confidentiel. Le traitement se fait intégralement dans votre navigateur.</p>
-      </div>
-      <div class="how-step">
-        <div class="step-num">02</div>
-        <div class="step-tag"><span class="tag">XOR CSPRNG</span></div>
-        <div class="step-title">Génération des fragments</div>
-        <p class="step-desc"><code>crypto.getRandomValues()</code> génère un masque aléatoire de qualité cryptographique. L'opération XOR produit deux fragments complémentaires. Aucun ne peut reconstituer le secret seul.</p>
-      </div>
-      <div class="how-step">
-        <div class="step-num">03</div>
-        <div class="step-tag"><span class="tag">Stockage</span></div>
-        <div class="step-title">Séparez les deux fragments</div>
-        <p class="step-desc">Fragment A → support numérique (coffre-fort de mots de passe, clé USB chiffrée). Fragment B → support physique (impression papier, coffre-fort, notaire). Les deux sont nécessaires pour retrouver le secret.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- ── VERSIONS / APPS ── -->
 <section class="versions" id="versions">
   <div class="container">
-    <div class="reveal">
-      <div class="section-label">Éditions</div>
-      <h2 class="section-title">Choisissez votre <span>version</span></h2>
-      <p class="section-desc">Trois éditions pour tous les usages — du particulier qui veut protéger une seed phrase à l'entreprise qui gère des secrets d'infrastructure.</p>
-    </div>
-    <div class="versions-grid reveal">
-
-      <!-- LITE -->
-      <div class="version-card vc-lite">
-        <span class="vc-badge badge-lite">Gratuit · Open Source</span>
+    <h2 class="section-title">Choisissez votre <span>version</span></h2>
+    <div class="versions-grid">
+      <div class="version-card">
         <div class="vc-name">FRAGMENT LITE</div>
-        <p class="vc-desc">La version essentielle. Interface épurée, jour/nuit, fragmentation et reconstitution instantanées.</p>
-        <ul class="vc-features">
-          <li>Fragmentation XOR CSPRNG</li>
-          <li>Mode jour et nuit</li>
-          <li>Reconstitution instantanée</li>
-          <li>Registre de session</li>
-          <li class="na">QR codes</li>
-          <li class="na">Impression kit</li>
-          <li class="na">Registre persistant</li>
-        </ul>
-        <a href="#" class="vc-action va-lite" onclick="ouvrirApp('lite');return false">LANCER LITE →</a>
-      </div>
-
-      <!-- ELITE -->
-      <div class="version-card vc-elite vc-featured">
-        <span class="vc-badge badge-elite">⭐ Recommandé · Grand Public</span>
-        <div class="vc-name">FRAGMENT ELITE</div>
-        <p class="vc-desc">La version complète pour le grand public. QR codes, impression kit de secours, registre persistant, onboarding guidé.</p>
-        <ul class="vc-features">
-          <li>Fragmentation XOR CSPRNG</li>
-          <li>QR codes pour les fragments</li>
-          <li>Impression kit physique</li>
-          <li>Registre persistant (localStorage)</li>
-          <li>Indice de stockage visible</li>
-          <li>Onboarding 4 étapes</li>
-          <li>Mode jour et nuit</li>
-        </ul>
-        <a href="#" class="vc-action va-elite" onclick="ouvrirApp('elite');return false">LANCER ELITE →</a>
-      </div>
-
-      <!-- CORPORATE -->
-      <div class="version-card vc-corp">
-        <span class="vc-badge badge-corp">Professionnel · B2B</span>
-        <div class="vc-name">FRAGMENT CORPORATE</div>
-        <p class="vc-desc">Pour les équipes et entreprises. Interface claire thème clair, PBKDF2 + AES, registre complet, conformité affichée.</p>
-        <ul class="vc-features">
-          <li>Fragmentation XOR CSPRNG</li>
-          <li>QR codes professionnels</li>
-          <li>Registre persistant</li>
-          <li>Interface thème clair</li>
-          <li>Chips de conformité</li>
-          <li>Barre de progression détaillée</li>
-          <li class="na">Chiffrement de fichiers</li>
-        </ul>
-        <a href="#" class="vc-action va-corp" onclick="ouvrirApp('corp');return false">LANCER CORPORATE →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── MODALE APP ── -->
-<div class="modal-overlay" id="appModal">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div class="modal-title" id="modalTitle">FRAGMENT</div>
-      <button class="modal-close" onclick="fermerApp()">✕</button>
-    </div>
-    <div class="modal-body" style="padding:0">
-      <iframe class="app-frame" id="appFrame" src="" title="Application FRAGMENT"></iframe>
-    </div>
-  </div>
-</div>
-
-<hr class="divider">
-
-<!-- ── SÉCURITÉ ── -->
-<section class="security" id="securite">
-  <div class="container">
-    <div class="security-grid">
-      <div class="reveal">
-        <div class="section-label">Architecture</div>
-        <h2 class="section-title">Sécurité <span>by design</span></h2>
-        <p class="section-desc" style="margin-bottom:32px">Chaque ligne de code est auditable. Le moteur XOR one-time pad garantit une sécurité information-théoriquement parfaite quand la clé est aussi longue que le message.</p>
-        <div class="sec-points">
-          <div class="sec-point">
-            <div class="sec-point-ico">🔒</div>
-            <div class="sec-point-body">
-              <div class="sec-point-title">Zéro transmission réseau</div>
-              <div class="sec-point-desc">Tout le traitement se passe dans votre navigateur. Aucun appel serveur, aucun log, aucune télémétrie. Vérifiable avec les outils développeur.</div>
-            </div>
-          </div>
-          <div class="sec-point">
-            <div class="sec-point-ico">🎲</div>
-            <div class="sec-point-body">
-              <div class="sec-point-title">crypto.getRandomValues()</div>
-              <div class="sec-point-desc">Le générateur de nombres aléatoires est celui du système d'exploitation, fourni via l'API Web Crypto. Équivalent de <code>Random.secure()</code> en Dart.</div>
-            </div>
-          </div>
-          <div class="sec-point">
-            <div class="sec-point-ico">🔍</div>
-            <div class="sec-point-body">
-              <div class="sec-point-title">Code source auditable</div>
-              <div class="sec-point-desc">Chaque édition est un fichier HTML unique. Clic droit → Voir le code source suffit pour auditer l'intégralité du système de chiffrement.</div>
-            </div>
-          </div>
-          <div class="sec-point">
-            <div class="sec-point-ico">📵</div>
-            <div class="sec-point-body">
-              <div class="sec-point-title">Fonctionne hors ligne</div>
-              <div class="sec-point-desc">Une fois chargée, l'application fonctionne sans connexion Internet. Idéal pour les environnements sensibles ou air-gapped.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal">
-        <div class="sec-visual">
-          <div class="code-line"><span class="code-num">1</span><span class="comment">// Moteur XOR — identique Dart/Flutter</span></div>
-          <div class="code-line"><span class="code-num">2</span><span class="key">const</span> <span class="val">data</span> = <span class="key">new</span> TextEncoder().<span class="op">encode</span>(secret);</div>
-          <div class="code-line"><span class="code-num">3</span></div>
-          <div class="code-line"><span class="code-num">4</span><span class="comment">// Masque aléatoire crypto-sécurisé</span></div>
-          <div class="code-line"><span class="code-num">5</span><span class="key">const</span> <span class="val">key</span> = crypto.<span class="op">getRandomValues</span>(</div>
-          <div class="code-line"><span class="code-num">6</span>&nbsp;&nbsp;<span class="key">new</span> Uint8Array(<span class="val">data</span>.length)</div>
-          <div class="code-line"><span class="code-num">7</span>);</div>
-          <div class="code-line"><span class="code-num">8</span></div>
-          <div class="code-line"><span class="code-num">9</span><span class="comment">// XOR byte-à-byte — parfait théoriquement</span></div>
-          <div class="code-line"><span class="code-num">10</span><span class="key">const</span> <span class="val">res</span> = <span class="key">new</span> Uint8Array(<span class="val">data</span>.length);</div>
-          <div class="code-line"><span class="code-num">11</span><span class="key">for</span> (<span class="key">let</span> i = 0; i &lt; <span class="val">data</span>.length; i++)</div>
-          <div class="code-line"><span class="code-num">12</span>&nbsp;&nbsp;<span class="val">res</span>[i] = <span class="val">data</span>[i] <span class="op">^</span> <span class="val">key</span>[i];</div>
-          <div class="code-line"><span class="code-num">13</span></div>
-          <div class="code-line"><span class="code-num">14</span><span class="comment">// Fragment A = clé, Fragment B = données XOR</span></div>
-          <div class="code-line"><span class="code-num">15</span><span class="key">return</span> { a: btoa(<span class="op">...</span><span class="val">key</span>), b: btoa(<span class="op">...</span><span class="val">res</span>) };</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- ── ALGO DIAGRAM ── -->
-<section class="algo" id="algo">
-  <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:40px">
-      <div class="section-label" style="justify-content:center;display:flex">Algorithme</div>
-      <h2 class="section-title" style="text-align:center">Le principe <span>XOR</span> illustré</h2>
-    </div>
-    <div class="algo-diagram reveal">
-      <div class="algo-box">
-        <div class="algo-box-title">Secret</div>
-        <div class="algo-box-val">« SEED »</div>
-        <div class="algo-box-sub">Texte UTF-8</div>
-      </div>
-      <div class="algo-arrow">+</div>
-      <div class="algo-box">
-        <div class="algo-box-title">Masque CSPRNG</div>
-        <div class="algo-box-val">Aléatoire</div>
-        <div class="algo-box-sub">256 bits entropie</div>
-      </div>
-      <div class="algo-arrow">→</div>
-      <div class="algo-op">
-        <div class="algo-op-sym">XOR</div>
-        <div class="algo-op-lbl">⊕ bit à bit</div>
-      </div>
-      <div class="algo-arrow">→</div>
-      <div class="algo-result">
-        <div class="algo-frag algo-frag-a">
-          <div class="algo-frag-lbl">Fragment A — Clé</div>
-          <div class="algo-frag-val">bXFz... (masque)</div>
-        </div>
-        <div class="algo-frag algo-frag-b">
-          <div class="algo-frag-lbl">Fragment B — Données</div>
-          <div class="algo-frag-val">Y2hh... (XOR résultat)</div>
-        </div>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:.72rem;color:var(--muted);margin-top:24px">
-      <strong style="color:var(--txt)">Propriété clé :</strong> Sans Fragment A, Fragment B est indiscernable d'une suite de bytes aléatoires. Mathématiquement parfait.
-    </p>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- ── FAQ ── -->
-<section class="faq" id="faq">
-  <div class="container-sm">
-    <div class="reveal" style="margin-bottom:0">
-      <div class="section-label">Questions fréquentes</div>
-      <h2 class="section-title">FAQ</h2>
-    </div>
-    <div class="faq-list reveal">
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">FRAGMENT envoie-t-il mes données sur Internet ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          <strong>Non, jamais.</strong> L'intégralité du traitement cryptographique se déroule dans votre navigateur. Il n'y a aucun appel réseau lors de la fragmentation ou de la reconstitution. Vous pouvez couper votre Wi-Fi et continuer à utiliser FRAGMENT normalement. Vérifiez par vous-même : ouvrez les outils développeur (F12 → Réseau) pendant une fragmentation — aucune requête n'apparaît.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">Quelle est la différence entre les trois éditions ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          <strong>LITE</strong> est l'édition gratuite et minimaliste : fragmentation/reconstitution basique, sans registre persistant. <strong>ELITE</strong> est la version grand public recommandée : QR codes imprimables, registre persistant, indice de stockage, onboarding guidé. <strong>CORPORATE</strong> est l'édition professionnelle en thème clair, avec métadonnées de conformité et interface adaptée aux entreprises. Le moteur cryptographique XOR est <em>strictement identique</em> dans les trois versions.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">Que se passe-t-il si je perds un des deux fragments ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Le secret est <strong>définitivement perdu</strong>. C'est la force et la limite du système XOR one-time pad : sans les deux fragments, aucune reconstruction n'est possible, même avec une puissance de calcul infinie. C'est pourquoi nous recommandons : Fragment A sur un support numérique sécurisé (gestionnaire de mots de passe, clé USB chiffrée) et Fragment B sur un support physique (impression papier en coffre-fort, chez un notaire, ou chez un proche de confiance).
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">L'algorithme XOR est-il vraiment sécurisé ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Oui, sous une condition : <strong>le masque doit être aussi long que le message, utilisé une seule fois, et généré de façon truly aléatoire.</strong> FRAGMENT respecte ces trois conditions en utilisant <code>crypto.getRandomValues()</code> (CSPRNG du système d'exploitation) pour générer un masque unique à chaque fragmentation. C'est le principe du <em>one-time pad</em>, démontré information-théoriquement parfait par Claude Shannon en 1949. La NSA l'utilise pour ses communications les plus sensibles.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">Les fragments produits par Lite sont-ils compatibles avec Elite et Corporate ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          <strong>Oui, totalement.</strong> Les trois éditions utilisent exactement le même algorithme (<code>crypto.getRandomValues</code> + XOR byte-à-byte + encodage base64 standard). Un Fragment A généré par LITE peut être reconstitué avec un Fragment B via ELITE ou CORPORATE, et vice-versa. Les formats base64 sont interopérables entre toutes les versions et également avec l'implémentation Flutter/Dart de référence.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">Mes données sont-elles stockées quelque part ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Les <strong>secrets en clair ne sont jamais stockés</strong>. Dans les éditions Elite et Corporate, le registre sauvegarde uniquement les <em>fragments</em> (pas le secret original) dans le localStorage de votre navigateur — une zone de stockage locale à votre appareil, inaccessible depuis Internet. Ce localStorage est effaçable à tout moment depuis les paramètres de votre navigateur. L'édition Lite ne sauvegarde rien du tout.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">Puis-je utiliser FRAGMENT pour des seed phrases de portefeuille crypto ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Oui, c'est l'un des cas d'usage les plus courants. Une seed phrase de 12 ou 24 mots peut être fragmentée en quelques secondes. <strong>Recommandations pour les actifs crypto :</strong> générez les fragments sur un appareil hors ligne (PC débranché du réseau), imprimez immédiatement les deux QR codes, effacez votre historique de navigation, stockez Fragment A dans un coffre bancaire et Fragment B dans un second lieu sûr. Ne stockez jamais les deux fragments ensemble.
-        </div></div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">
-          <span class="faq-q-txt">FRAGMENT est-il open source ?</span>
-          <span class="faq-icon">+</span>
-        </div>
-        <div class="faq-a"><div class="faq-a-inner">
-          Oui. Chaque édition est un fichier HTML autonome que vous pouvez inspecter, copier et modifier librement. L'édition LITE est distribuée sous licence MIT. Les éditions ELITE et CORPORATE sont distribuées sous licence propriétaire avec droit d'audit : vous pouvez lire et vérifier le code, mais pas redistribuer sans autorisation. Le moteur cryptographique lui-même (les fonctions XOR) est dans le domaine public.
-        </div></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- ── CONFORMITÉ LÉGALE ── -->
-<section class="legal" id="legal">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label">Conformité & Légal</div>
-      <h2 class="section-title">Transparence <span>totale</span></h2>
-      <p class="section-desc">FRAGMENT est conçu avec une exigence de conformité maximale. Voici notre position sur chaque point légal pertinent.</p>
-    </div>
-    <div class="legal-grid reveal">
-
-      <div class="legal-card">
-        <div class="legal-card-ico">🇪🇺</div>
-        <div class="legal-card-title">RGPD — Données Personnelles</div>
-        <div class="legal-card-body">
-          <strong>Aucune donnée personnelle n'est collectée.</strong> FRAGMENT ne dispose d'aucun compte utilisateur, aucun tracking, aucune analytics, aucun cookie tiers.
-          <ul>
-            <li>Aucun traitement de données personnelles au sens RGPD</li>
-            <li>Aucun DPO requis (aucune donnée traitée)</li>
-            <li>Le localStorage est sous votre contrôle exclusif</li>
-            <li>Aucun transfert hors UE</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="legal-card">
-        <div class="legal-card-ico">🔐</div>
-        <div class="legal-card-title">Réglementation Cryptographique</div>
-        <div class="legal-card-body">
-          L'algorithme XOR one-time pad est dans le domaine public depuis 1882. Son usage est légal dans l'Union Européenne, en France et dans la quasi-totalité des pays.
-          <ul>
-            <li>XOR OTP : domaine public, aucune licence requise</li>
-            <li>Conforme à la directive eIDAS 2.0</li>
-            <li>Conforme NIS2 pour usage personnel</li>
-            <li>Non soumis aux restrictions export US (EAR)</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="legal-card">
-        <div class="legal-card-ico">📚</div>
-        <div class="legal-card-title">Licences & Attributions</div>
-        <div class="legal-card-body">
-          Toutes les bibliothèques tierces utilisées sont sous licences permissives.
-          <ul>
-            <li><strong>QRCode.js</strong> — Licence MIT (Shim Sangmin)</li>
-            <li><strong>Google Fonts</strong> — SIL Open Font License</li>
-            <li><strong>Web Crypto API</strong> — Standard W3C, domaine public</li>
-            <li>Aucune dépendance NPM ou backend</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="legal-card">
-        <div class="legal-card-ico">⚖️</div>
-        <div class="legal-card-title">Limitation de Responsabilité</div>
-        <div class="legal-card-body">
-          FRAGMENT est fourni "tel quel". <strong>L'utilisateur est seul responsable</strong> de la conservation de ses fragments. La perte d'un fragment entraîne la perte définitive du secret.
-          <ul>
-            <li>Aucune garantie de récupération en cas de perte</li>
-            <li>Usage sous votre entière responsabilité</li>
-            <li>Non adapté à la gestion de données médicales (HDS)</li>
-            <li>Pour usage professionnel critique : consultez un RSSI</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="legal-card">
-        <div class="legal-card-ico">🍪</div>
-        <div class="legal-card-title">Cookies & Tracking</div>
-        <div class="legal-card-body">
-          Ce site n'utilise <strong>aucun cookie de tracking</strong>, aucune régie publicitaire, aucun pixel Facebook ou Google Analytics.
-          <ul>
-            <li>Zéro cookie tiers</li>
-            <li>Zéro analytics comportementale</li>
-            <li>Le seul stockage est le localStorage de l'app</li>
-            <li>Conforme directive ePrivacy sans bannière obligatoire</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="legal-card">
-        <div class="legal-card-ico">©️</div>
-        <div class="legal-card-title">Droits d'Auteur</div>
-        <div class="legal-card-body">
-          © 2026 FRAGMENT — Tous droits réservés pour le code, le design et les marques.
-          <ul>
-            <li>Édition LITE : Licence MIT — libre redistribution</li>
-            <li>Éditions ELITE & CORPORATE : Licence propriétaire</li>
-            <li>Audit du code : autorisé pour toutes les éditions</li>
-            <li>Marque "FRAGMENT" : déposée, usage commercial interdit</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- ── CTA FINAL ── -->
-<section class="cta-section">
-  <div class="container-sm" style="position:relative;z-index:1">
-    <div class="reveal">
-      <div class="section-label" style="justify-content:center;display:flex;margin-bottom:20px">Prêt ?</div>
-      <h2 class="cta-title">Protégez vos secrets<br><span style="color:var(--c1)">maintenant</span></h2>
-      <p class="cta-desc">100% local. Aucune inscription. Aucune donnée collectée.<br>Ouvrez l'application et commencez en 30 secondes.</p>
-      <div class="cta-btns">
-        <a href="#" class="btn-primary" onclick="ouvrirApp('elite');return false">LANCER FRAGMENT ELITE</a>
-        <a href="#versions" class="btn-secondary">VOIR TOUTES LES VERSIONS</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div>
-        <div class="footer-brand">FRAGMENT 🇫🇷</div>
-        <p class="footer-tagline">Système de fragmentation cryptographique XOR. Zéro serveur. Zéro données collectées. 100% souverain.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">Application</div>
-        <ul class="footer-links">
-          <li><a href="#" onclick="ouvrirApp('lite');return false">Fragment Lite</a></li>
-          <li><a href="#" onclick="ouvrirApp('elite');return false">Fragment Elite</a></li>
-          <li><a href="#" onclick="ouvrirApp('corp');return false">Fragment Corporate</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Documentation</div>
-        <ul class="footer-links">
-          <li><a href="#comment">Fonctionnement</a></li>
-          <li><a href="#securite">Sécurité</a></li>
-          <li><a href="#algo">Algorithme XOR</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Légal</div>
-        <ul class="footer-links">
-          <li><a href="#legal">Conformité RGPD</a></li>
-          <li><a href="#legal">Licences</a></li>
-          <li><a href="#legal">CGU</a></li>
-          <li><a href="mailto:contact@fragment.fr">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2026 <span>FRAGMENT</span> — Tous droits réservés · Développé en France 🇫🇷</div>
-      <div class="footer-legal">
-        <a href="#legal">CGU</a>
-        <a href="#legal">Confidentialité</a>
-        <a href="#legal">Mentions légales</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ── BANNIÈRE COOKIES ── -->
-<div class="cookie-banner" id="cookieBanner">
-  <span>Ce site n'utilise aucun cookie de tracking. Le localStorage est uniquement utilisé pour sauvegarder vos fragments localement sur votre appareil.</span>
-  <div class="cookie-btns">
-    <button class="cookie-accept" onclick="accepterCookies()">COMPRIS</button>
-    <button class="cookie-decline" onclick="accepterCookies()">Fermer</button>
-  </div>
-</div>
-
-<script>
-// ── Scroll reveal ────────────────────────────────────
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold:.12 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// ── FAQ toggle ───────────────────────────────────────
-function toggleFaq(el) {
-  const item = el.parentElement;
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-
-// ── Modale app ───────────────────────────────────────
-// URLs des apps embarquées (même dossier ou inline)
-const APPS = {
-  lite:  { title:'FRAGMENT LITE', src:'fragment-lite_v2__1_.html' },
-  elite: { title:'FRAGMENT ELITE 3.0', src:'Fragment_Elite_3_0_v2.html' },
-  corp:  { title:'FRAGMENT CORPORATE', src:'fragment_corporate.html' }
-};
-
-function ouvrirApp(id) {
-  const app = APPS[id];
-  document.getElementById('modalTitle').textContent = app.title;
-  document.getElementById('appFrame').src = app.src;
-  document.getElementById('appModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function fermerApp() {
-  document.getElementById('appModal').classList.remove('open');
-  document.getElementById('appFrame').src = '';
-  document.body.style.overflow = '';
-}
-// Fermer en cliquant l'overlay
-document.getElementById('appModal').addEventListener('click', function(e) {
-  if (e.target === this) fermerApp();
-});
-// Fermer avec Escape
-document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerApp(); });
-
-// ── Cookie banner ────────────────────────────────────
-function accepterCookies() {
-  document.getElementById('cookieBanner').classList.add('hidden');
-  localStorage.setItem('frag_cookie_ok', '1');
-}
-if (localStorage.getItem('frag_cookie_ok')) {
-  document.getElementById('cookieBanner').classList.add('hidden');
-}
-
-// ── Nav active link ───────────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const navObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#'+e.target.id ? 'var(--c1)' : '';
-      });
-    }
-  });
-}, { threshold:.3 });
-sections.forEach(s => navObs.observe(s));
-</script>
-</body>
-</html>
+        <p class="vc-desc">Version
