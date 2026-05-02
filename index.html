@@ -3,236 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="FRAGMENT — Logiciel de fragmentation cryptographique XOR 100% local. Protégez vos seed phrases, mots de passe et fichiers sensibles. Zéro cloud, zéro serveur, zéro tracking. Made in France.">
-    <meta name="keywords" content="fragment cryptographie, XOR chiffrement, protection seed phrase, securite locale, zero cloud, RGPD conforme, fragmentation données, mot de passe securise, fragment elite, fragment lite">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="FRAGMENT">
+    <meta name="description" content="FRAGMENT — Logiciel de fragmentation cryptographique XOR 100% local.">
+    <title>FRAGMENT — Logiciel de Fragmentation Cryptographique</title>
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="FRAGMENT — Cryptographie Souveraine 🇫🇷">
-    <meta property="og:description" content="Fragmentez vos secrets en deux morceaux illisibles séparément. XOR 100% local, zéro cloud, RGPD compliant.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FRAGMENT — Cryptographie Souveraine">
-    <meta name="twitter:description" content="Protection XOR 100% locale. Zéro cloud, zéro serveur. Made in France.">
-    
-    <link rel="canonical" href="https://fragmentelite.com/">
-    <title>FRAGMENT — Logiciel de Fragmentation Cryptographique XOR | Protection Souveraine 🇫🇷</title>
-    
-    <!-- Fonts -->
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Schema.org for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "FRAGMENT",
-      "description": "Logiciel de fragmentation cryptographique XOR 100% local. Protection de données souveraine.",
-      "applicationCategory": "SecurityApplication",
-      "operatingSystem": "Web Browser, iOS, Android",
-      "offers": [
-        {"@type": "Offer", "name": "Fragment Lite — Standard Protected Engine", "price": "0", "priceCurrency": "EUR"},
-        {"@type": "Offer", "name": "Fragment Elite — Hardened Security Engine", "price": "49", "priceCurrency": "EUR"}
-      ],
-      "author": {"@type": "Organization", "name": "FRAGMENT", "email": "fragmentelite@gmail.com"}
-    }
-    </script>
-
     <style>
         /* --- VARIABLES ET RESET --- */
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        :root{
-          --c1:#00d4ff; --c1g:rgba(0,212,255,.15); --c1d:rgba(0,212,255,.07);
-          --c2:#ff8c42; --c2g:rgba(255,140,66,.12);
-          --c3:#00e87a; --red:#ff4d6a;
-          --bg:#030509; --bg2:#060b14; --bg3:#080f1d;
-          --card:#0a1422; --card2:#0d1c30;
-          --border:rgba(255,255,255,.06); --border2:rgba(0,212,255,.2);
-          --txt:#ddeeff; --muted:#4d7a9f; --faint:#0c1e35;
-          --syne:'Syne',sans-serif; --mono:'DM Mono',monospace;
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --c1: #00d4ff; --c1g: rgba(0, 212, 255, .15); --c1d: rgba(0, 212, 255, .07);
+            --c2: #ff8c42; --c2g: rgba(255, 140, 66, .12);
+            --c3: #00e87a; --red: #ff4d6a;
+            --bg: #030509; --bg2: #060b14; --bg3: #080f1d;
+            --card: #0a1422; --card2: #0d1c30;
+            --border: rgba(255, 255, 255, .06); --border2: rgba(0, 212, 255, .2);
+            --txt: #ddeeff; --muted: #4d7a9f; --faint: #0c1e35;
+            --syne: 'Syne', sans-serif; --mono: 'DM Mono', monospace;
         }
-        
-        html{scroll-behavior:smooth}
-        body{
-            background:var(--bg);
-            color:var(--txt);
-            font-family:var(--mono);
-            font-size:16px;
-            line-height:1.6;
-            overflow-x:hidden;
-            -webkit-font-smoothing:antialiased;
+
+        html { scroll-behavior: smooth; }
+        body { 
+            background: var(--bg); 
+            color: var(--txt); 
+            font-family: var(--mono); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Effet de grille en arrière-plan */
-        body::before{
-            content:'';
-            position:fixed;
-            inset:0;
-            background-image:linear-gradient(rgba(0,212,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.015) 1px,transparent 1px);
-            background-size:56px 56px;
-            pointer-events:none;
-            z-index:0;
+        body::before {
+            content: ''; position: fixed; inset: 0;
+            background-image: linear-gradient(rgba(0, 212, 255, .015) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 212, 255, .015) 1px, transparent 1px);
+            background-size: 56px 56px; pointer-events: none; z-index: 0;
         }
 
-        .z{position:relative;z-index:1}
-        .w{max-width:1140px;margin:0 auto;padding:0 28px}
+        .z { position: relative; z-index: 1; }
+        .w { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
 
         /* --- NAVIGATION --- */
-        nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(3,5,9,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
-        .nav-inner{max-width:1140px;margin:0 auto;padding:0 28px;height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-        .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-        .nav-logo-txt{font-family:var(--syne);font-weight:800;font-size:1.05rem;letter-spacing:4px;color:#fff}
-        .nav-links{display:flex;align-items:center;gap:22px}
-        .nav-links a{font-size:.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
-        .nav-links a:hover{color:var(--c1)}
-        .nav-cta{font-family:var(--syne);font-size:.72rem;font-weight:700;letter-spacing:1px;padding:9px 20px;border:1px solid var(--c1);color:var(--c1);text-decoration:none;transition:all .2s;white-space:nowrap}
-        .nav-cta:hover{background:var(--c1);color:#000}
+        nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+            background: rgba(3, 5, 9, .92); border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+        }
+        .nav-inner {
+            max-width: 1140px; margin: 0 auto; padding: 0 28px; height: 70px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .nav-logo-txt { 
+            font-family: var(--syne); font-weight: 800; font-size: 1.05rem; 
+            letter-spacing: 4px; color: #fff; 
+        }
+        .nav-links { display: flex; align-items: center; gap: 22px; }
+        .nav-links a { 
+            font-size: .75rem; text-transform: uppercase; color: var(--muted); 
+            text-decoration: none; transition: color .2s; 
+        }
+        .nav-links a:hover { color: var(--c1); }
+        .nav-cta { 
+            font-family: var(--syne); font-size: .72rem; font-weight: 700; 
+            padding: 9px 20px; border: 1px solid var(--c1); color: var(--c1); 
+            text-decoration: none; transition: all .2s; 
+        }
+        .nav-cta:hover { background: var(--c1); color: #000; }
 
         /* --- HERO SECTION --- */
-        .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 28px 60px;position:relative;overflow:hidden}
-        .hero-inner{max-width:1140px;margin:0 auto;width:100%;position:relative;z-index:2}
-        .hero-t3d{
-            font-family:var(--syne);
-            font-size:clamp(1.8rem,5vw,3.5rem);
-            font-weight:800;
-            letter-spacing:-3px;
-            line-height:.88;
-            background:linear-gradient(175deg,#ffffff 0%,#b8dfff 35%,#00d4ff 65%,#0055aa 100%);
-            -webkit-background-clip:text;
-            background-clip:text;
-            color:transparent;
-            filter:drop-shadow(0 6px 18px rgba(0,212,255,.38));
-            margin-bottom:14px;
+        .hero {
+            min-height: 100vh; display: flex; flex-direction: column; 
+            justify-content: center; padding: 100px 28px 60px; position: relative;
         }
-        .hero-sub-t{font-family:var(--syne);font-size:clamp(.9rem,2.5vw,1.3rem);font-weight:600;letter-spacing:6px;color:var(--c1);text-transform:uppercase;margin-bottom:18px;opacity:.85}
-        .hero-desc{font-size:1rem;color:var(--muted);line-height:1.85;max-width:500px;margin-bottom:32px}
-        .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-        
-        .btn-p{font-family:var(--syne);font-size:.85rem;font-weight:700;letter-spacing:1px;padding:16px 34px;background:var(--c1);color:#000;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;transition:all .2s}
-        .btn-p:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,212,255,.3)}
+        .hero-inner { max-width: 1140px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
+        .hero-t3d {
+            font-family: var(--syne); font-size: clamp(1.8rem, 5vw, 3.5rem); 
+            font-weight: 800; line-height: .88;
+            background: linear-gradient(175deg, #fff 0%, #b8dfff 35%, #00d4ff 65%, #0055aa 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            filter: drop-shadow(0 6px 18px rgba(0, 212, 255, .38)); margin-bottom: 14px;
+        }
+        .hero-sub-t { 
+            font-family: var(--syne); font-size: clamp(.9rem, 2.5vw, 1.3rem); 
+            color: var(--c1); text-transform: uppercase; letter-spacing: 6px; margin-bottom: 18px; 
+        }
+        .hero-desc { font-size: 1rem; color: var(--muted); max-width: 500px; margin-bottom: 32px; }
 
-        /* --- PRICING CARDS --- */
-        .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
-        .pc{background:var(--card);border:1px solid var(--border);padding:32px;position:relative;display:flex;flex-direction:column;transition:all .25s}
-        .pc:hover{transform:translateY(-5px);border-color:var(--border2)}
-        .pc-name{font-family:var(--syne);font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:6px}
-        .pc-price{font-family:var(--syne);font-size:1.9rem;font-weight:800;margin-bottom:18px}
-        .pc-list{list-style:none;margin-bottom:26px;display:flex;flex-direction:column;gap:10px}
-        .ck{background:var(--c3);color:#000;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900}
+        .btn-p { 
+            font-family: var(--syne); padding: 16px 34px; background: var(--c1); 
+            color: #000; text-decoration: none; font-weight: 700; display: inline-flex;
+            transition: all .2s; 
+        }
+        .btn-p:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,212,255,.3); }
 
-        /* --- AFFILIATION BAR --- */
-        #aff-bar{display:none;background:#ff9d00;color:#000;text-align:center;padding:12px;font-weight:800;font-size:13px;position:sticky;top:0;z-index:9999}
-        .partner-active{border:2px solid #ff9d00!important;transform:scale(1.05);box-shadow:0 0 25px rgba(255,157,0,.2)!important}
+        /* --- PRICING --- */
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; margin-top: 60px;
+        }
+        .pc { 
+            background: var(--card); border: 1px solid var(--border); padding: 32px; 
+            position: relative; transition: all .25s; 
+        }
+        .pc:hover { border-color: var(--c1); transform: translateY(-5px); }
+        .pc-name { font-family: var(--syne); font-size: 1.5rem; font-weight: 800; color: #fff; }
+        .pc-price { font-family: var(--syne); font-size: 2rem; font-weight: 800; color: var(--c1); }
+        .pc-list { list-style: none; margin: 20px 0; }
+        .pc-list li { font-size: 0.85rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .ck { width: 18px; height: 18px; background: var(--c3); border-radius: 50%; display: inline-block; }
+
+        /* Mobile Menu */
+        .ham { display: none; }
+        @media(max-width: 760px) {
+            .nav-links, .nav-cta { display: none; }
+            .ham { display: block; background: none; border: none; cursor: pointer; }
+            .ham span { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Système Affiliation -->
-    <div id="aff-bar">
-      OFFRE PARTENAIRE ACTIVÉE : VOTRE TARIF PRIVILÈGE EST APPLIQUÉ 🛡️
-    </div>
-
-    <nav>
-        <div class="nav-inner">
-            <a href="#" class="nav-logo">
-                <span class="nav-logo-txt">FRAGMENT</span>
-            </a>
-            <div class="nav-links">
-                <a href="#concept">Concept</a>
-                <a href="#securite">Sécurité</a>
-                <a href="#pricing">Tarifs</a>
-            </div>
-            <a href="#pricing" class="nav-cta">OBTENIR FRAGMENT</a>
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <span class="nav-logo-txt">FRAGMENT</span>
+        </a>
+        <div class="nav-links">
+            <a href="#demo">Démo</a>
+            <a href="#produit">Produit</a>
+            <a href="#pricing">Licences</a>
+            <a href="#faq">FAQ</a>
         </div>
-    </nav>
+        <a href="#pricing" class="nav-cta">OBTENIR FRAGMENT</a>
+        <button class="ham"><span></span><span></span><span></span></button>
+    </div>
+</nav>
 
-    <main class="z">
-        <section class="hero">
-            <div class="hero-inner">
-                <p class="hero-sub-t">Souveraineté Numérique</p>
-                <h1 class="hero-t3d">FRAGMENTEZ VOS <br>SECRETS.</h1>
-                <p class="hero-desc">
-                    Le premier logiciel de <strong>fragmentation XOR 100% local</strong>. Divisez vos clés privées, mots de passe ou fichiers en deux fragments illisibles. Sans serveur, sans cloud.
-                </p>
-                <div class="hero-btns">
-                    <a href="#pricing" class="btn-p">DÉCOUVRIR L'ELITE</a>
-                    <a href="#" class="btn-s" style="color:white; text-decoration:none; border:1px solid var(--border2); padding:16px 34px;">ESSAI GRATUIT</a>
-                </div>
-            </div>
-        </section>
+<section class="hero z">
+    <div class="hero-inner">
+        <p class="hero-sub-t">Cryptographie Souveraine</p>
+        <h1 class="hero-t3d">FRAGMentez vos secrets.<br>Protégez votre futur.</h1>
+        <p class="hero-desc">
+            Utilisez l'algorithme <strong>XOR</strong> pour diviser vos clés privées et mots de passe en deux fragments. 
+            Aucun cloud, aucun serveur. 100% local.
+        </p>
+        <div class="hero-btns">
+            <a href="#pricing" class="btn-p">DÉCOUVRIR LES OFFRES</a>
+        </div>
+    </div>
+</section>
 
-        <section id="pricing" class="w" style="padding: 100px 0;">
-            <h2 style="font-family:var(--syne); font-size:2.5rem; text-align:center; margin-bottom:50px;">NOS LICENCES</h2>
-            <div class="pricing-grid">
-                <!-- Lite -->
-                <div class="pc">
-                    <p class="pc-name">Fragment Lite</p>
-                    <p class="pc-price">0€ <span style="font-size:0.8rem; color:var(--muted);">Gratuit</span></p>
-                    <ul class="pc-list">
-                        <li><span class="ck">✓</span> Moteur XOR Standard</li>
-                        <li><span class="ck">✓</span> 100% Local</li>
-                    </ul>
-                    <a href="#" class="btn-p" style="margin-top:auto; width:100%; justify-content:center;">TELECHARGER</a>
-                </div>
-                <!-- Elite -->
-                <div class="pc" style="border-color:var(--c1);">
-                    <p class="pc-name" style="color:var(--c1);">Fragment Elite</p>
-                    <p class="pc-price">49€ <span style="font-size:0.8rem; color:var(--muted);">Licence à vie</span></p>
-                    <ul class="pc-list">
-                        <li><span class="ck">✓</span> Hardened Security Engine</li>
-                        <li><span class="ck">✓</span> Anti-Forensics</li>
-                        <li><span class="ck">✓</span> Support Prioritaire</li>
-                    </ul>
-                    <a href="#" class="btn-p" style="margin-top:auto; width:100%; justify-content:center; background:linear-gradient(90deg, var(--c1), var(--c2))">ACHETER MAINTENANT</a>
-                </div>
-            </div>
-        </section>
-    </main>
+<section class="w z" id="pricing" style="padding: 100px 0;">
+    <h2 style="font-family: var(--syne); font-size: 2.5rem; text-align: center;">Nos Licences</h2>
+    <div class="pricing-grid">
+        <!-- Fragment Lite -->
+        <div class="pc">
+            <p class="pc-name">Fragment Lite</p>
+            <p class="pc-price">0€</p>
+            <ul class="pc-list">
+                <li><span class="ck"></span> Moteur XOR Standard</li>
+                <li><span class="ck"></span> Usage Personnel</li>
+                <li><span class="ck"></span> 100% Hors-ligne</li>
+            </ul>
+            <a href="#" class="btn-p" style="width: 100%; justify-content: center;">TÉLÉCHARGER</a>
+        </div>
 
-    <script>
-    /* --- LOGIQUE D'AFFILIATION --- */
-    (function(){
-      var params = new URLSearchParams(window.location.search);
-      var refID = params.get('ref');
-      if(refID){
-        var bar = document.getElementById('aff-bar');
-        if(bar) bar.style.display = 'block';
-        localStorage.setItem('armor_ref_partner', refID);
-        
-        // Applique le paramètre ref aux liens de paiement
-        var links = document.querySelectorAll('a[href*="gumroad"], a[href*="stripe"], .btn-p');
-        links.forEach(function(btn){
-          var href = btn.getAttribute('href');
-          if(href && href !== '#'){
-            var sep = href.includes('?') ? '&' : '?';
-            btn.setAttribute('href', href + sep + 'ref=' + refID);
-            btn.classList.add('partner-active');
-          }
-        });
-      }
-    })();
+        <!-- Fragment Elite -->
+        <div class="pc" style="border-color: var(--c2);">
+            <p class="pc-name">Fragment Elite</p>
+            <p class="pc-price">49€</p>
+            <ul class="pc-list">
+                <li><span class="ck"></span> Moteur Hardened Security</li>
+                <li><span class="ck"></span> Anti-Forensics</li>
+                <li><span class="ck"></span> Support Prioritaire</li>
+            </ul>
+            <a href="#" class="btn-p" style="width: 100%; justify-content: center; background: var(--c2);">ACHETER</a>
+        </div>
+    </div>
+</section>
 
-    /* --- ANIMATION AU SCROLL --- */
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-            }
-        });
-    });
+<script>
+    // Script simple pour le scroll ou interactions
+    console.log("FRAGMENT Initialisé");
+</script>
 
-    document.querySelectorAll('.pc').forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(30px)";
-        el.style.transition = "all 0.6s ease-out";
-        observer.observe(el);
-    });
-    </script>
 </body>
 </html>
