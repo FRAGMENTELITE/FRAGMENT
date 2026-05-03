@@ -19,19 +19,6 @@ La version "Lite" présente ici est un outil brut. Pour une gestion sécurisée 
 * **🛠️ Support & Mises à jour :** Accès prioritaire aux nouvelles fonctionnalités.
 
 * "Designed for maximum sovereignty. No cloud, no tracking, just math."
-* # Bienvenue sur mon projet Armor
-
-![Logo](assets/logo.webp)
-
-## Aperçu
-![Hero](assets/hero.png)
-
-## Vidéo de démo
-<video src="demo.mp4" width="100%" controls></video>
-
-## Schémas et Détails
-![Schéma](assets/schema.png)
-![Mobile](assets/mobile.png)
 
 ### 🚀 Tester la Démo
 CLICK SUR LE LIEN
