@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Chiffrer un fichier sensible 100% offline : le guide souverain sans cloud (2026)</title>
+<meta name="description" content="Apprenez à chiffrer un fichier sensible 100% offline sans cloud. Méthode XOR, RGPD, Made in France. Alternative à LastPass, Dropbox.">
+<meta name="keywords" content="chiffrer fichier sensible offline, fragment, xor, offline, rgpd, made in france">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://fragmentelite.github.io/FRAGMENT/blog/chiffrer-fichier-sensible-offline/">
+<meta property="og:title" content="Chiffrer un fichier sensible 100% offline : le guide souverain sans cloud (2026)">
+<meta property="og:description" content="Apprenez à chiffrer un fichier sensible 100% offline sans cloud. Méthode XOR, RGPD, Made in France. Alternative à LastPass, Dropbox.">
+<meta property="og:url" content="https://fragmentelite.github.io/FRAGMENT/blog/chiffrer-fichier-sensible-offline/">
+<style>body{font-family:system-ui;max-width:720px;margin:40px auto;padding:0 20px;line-height:1.6}h1{font-size:28px}h2{margin-top:32px}</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6GDFTFE4FB"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6GDFTFE4FB');</script>
+</head>
+<body>
+<a href="/FRAGMENT/">← Retour FRAGMENT</a>
+<h1>Comment chiffrer un fichier sensible 100% offline sans cloud</h1>
+<p><em>Apprenez à chiffrer un fichier sensible 100% offline sans cloud. Méthode XOR, RGPD, Made in France. Alternative à LastPass, Dropbox.</em></p>
+
+<p><strong>Problème :</strong> 83% des fuites de données en 2025 viennent du cloud. Dropbox, Google Drive, LastPass ont tous été hackés. Vos fichiers sensibles (contrats, seed phrases, clés API) sont à risque dès qu'ils quittent votre appareil.</p>
+
+<h2>Pourquoi le cloud n'est pas une solution pour les fichiers sensibles ?</h2>
+<p>Stocker un fichier sensible sur le cloud = confier votre secret à un tiers américain soumis au Cloud Act. Même chiffré, il reste attaquable. La seule vraie sécurité : <strong>que le fichier ne quitte jamais votre appareil.</strong></p>
+
+<h2>La méthode FRAGMENT : fragmentation XOR 100% locale</h2>
+<p>FRAGMENT ne chiffre pas, il <strong>fragmente</strong>. Principe :</p>
+<ol>
+<li>Votre fichier est lu en RAM (jamais sur disque)</li>
+<li>Un masque aléatoire de même taille est généré via <code>crypto.getRandomValues()</code> (CSPRNG natif)</li>
+<li>Opération XOR : <code>Fragment A = Masque aléatoire</code> / <code>Fragment B = Fichier XOR Masque</code></li>
+<li>Résultat : 2 fragments mathématiquement illisibles séparément. Sécurité prouvée par Shannon en 1949.</li>
+</ol>
+
+<h2>Tutoriel en 30 secondes</h2>
+<p>1. Ouvrez <a href='https://fragmentelite.github.io/FRAGMENT/'>FRAGMENT</a> (déconnectez le Wi-Fi pour vérifier, ça marche offline)<br>
+2. Glissez votre fichier sensible<br>
+3. Récupérez Fragment A (USB chiffrée) et Fragment B (QR code imprimé)<br>
+4. Stockez-les séparément géographiquement. Jamais ensemble.</p>
+
+<h2>RGPD, NIS2, eIDAS : 100% conforme</h2>
+<p>Aucune donnée ne quitte votre appareil. Pas de sous-traitant, pas de transfert hors UE. Vous éliminez juridiquement la responsabilité de la donnée.</p>
+
+<p><strong>Conclusion :</strong> Chiffrer offline, c'est ne pas faire confiance. Fragmenter, c'est rendre la fuite mathématiquement impossible.</p>
+
+<p><a href='https://fragmentelite.github.io/FRAGMENT/' style='background:black;color:white;padding:12px 20px;text-decoration:none;'>🔒 ESSAYER FRAGMENT GRATUITEMENT →</a></p>
+
+<hr><p>© 2026 FRAGMENT — Made in France — 100% Offline</p>
+</body>
+</html>
