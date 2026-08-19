@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://fragmentelite.github.io/FRAGMENT/</loc><priority>1.0</priority></url>
-  <url><loc>https://fragmentelite.github.io/FRAGMENT/blog/chiffrer-fichier-sensible-offline/</loc><priority>0.8</priority></url>
-  <url><loc>https://fragmentelite.github.io/FRAGMENT/blog/proteger-cle-privee-crypto-seed-phrase/</loc><priority>0.8</priority></url>
-  <url><loc>https://fragmentelite.github.io/FRAGMENT/blog/alternative-cloud-rgpd-100-local/</loc><priority>0.8</priority></url>
+  <url><loc>https://fragmentelite.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://fragmentelite.com/guide/protection-seed-phrase.html</loc><priority>0.8</priority></url>
+  <url><loc>https://fragmentelite.com/guide/conformite-dora.html</loc><priority>0.8</priority></url>
+  <url><loc>https://fragmentelite.com/guide/rgpd-zero-cloud.html</loc><priority>0.8</priority></url>
+  <url><loc>https://fragmentelite.com/en/</loc><priority>0.6</priority></url>
 </urlset>
