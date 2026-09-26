@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
-Sitemap: https://fragmentelite.com/sitemap.xml
+
+# Sitemap principal
+Sitemap: https://fragmentelite.github.io/FRAGMENT/sitemap.xml
+
+# Bloque les assets inutiles pour le crawl budget
+Disallow: /*.mp4$
+Disallow: /demo.mp4
