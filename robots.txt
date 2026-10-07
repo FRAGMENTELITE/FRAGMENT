@@ -1,9 +1,18 @@
 User-agent: *
 Allow: /
 
-# Sitemap principal
+# Sitemaps
 Sitemap: https://fragmentelite.github.io/FRAGMENT/sitemap.xml
+Sitemap: https://fragmentelite.github.io/sitemap.xml
 
-# Bloque les assets inutiles pour le crawl budget
-Disallow: /*.mp4$
-Disallow: /demo.mp4
+# Autorise tout le contenu important
+Allow: /FRAGMENT/
+Allow: /FRAGMENT/guides/
+Allow: /FRAGMENT/assets/
+
+# Bloque uniquement les vrais fichiers inutiles (pas la démo)
+Disallow: /*.git/
+Disallow: /*.DS_Store
+
+# Crawl-delay pour éviter spam (optionnel)
+# Crawl-delay: 1
