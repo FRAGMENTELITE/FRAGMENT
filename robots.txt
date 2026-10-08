@@ -1,18 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemaps - Déclarés en double pour GitHub Pages
 Sitemap: https://fragmentelite.github.io/FRAGMENT/sitemap.xml
-Sitemap: https://fragmentelite.github.io/sitemap.xml
-
-# Autorise le crawl complet du projet FRAGMENT
-Allow: /FRAGMENT/
-Allow: /FRAGMENT/guides/
-Allow: /FRAGMENT/assets/
-
-# Bloque uniquement les fichiers système inutiles
-Disallow: /*.git/
-Disallow: /*.DS_Store$
-Disallow: /*.log$
-
-# Pas de blocage video - demo.mp4 doit être indexée pour preuve sociale
