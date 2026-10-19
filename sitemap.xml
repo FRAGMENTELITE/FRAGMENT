@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- HOMEPAGE - PRIORITÉ 1 -->
   <url>
     <loc>https://fragmentelite.github.io/FRAGMENT/</loc>
     <lastmod>2026-10-08</lastmod>
@@ -22,8 +20,6 @@
       <image:title>Schéma FRAG_ENGINE RECON_ENGINE - XOR CSPRNG</image:title>
     </image:image>
   </url>
-
-  <!-- EDITIONS PRODUIT -->
   <url>
     <loc>https://fragmentelite.github.io/FRAGMENT/lite/</loc>
     <lastmod>2026-10-08</lastmod>
